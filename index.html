@@ -335,134 +335,255 @@
 		</section><!--/.skills-->
 		<!--skills end -->
 
-		<!--photos start -->
-		<section id="photos" class="photos">
-			<div class="section-heading text-center">
-				<h2>Projects</h2>
-			</div><br/>
-			<div class="container">
-				<div class="photos-content">
-					<!-- Photo Slider -->
-					<div class="photo-slider">
-						<!-- Slides -->
-						<div class="photo-item">
-                    <a href="https://shizuka-san.vercel.app/" target="_blank">
-                        <img src="assets\images\about\1g.png" alt="Photo 1">
-                    </a>
-                </div>
-				<div class="photo-item">
-                    <a href="https://ecovision-5ope.onrender.com/auth" target="_blank">
-                        <img src="assets\images\about\2g.png" alt="Photo 3">
-                    </a>
-                </div>
+		<!--projects start -->
+<section id="photos" class="photos">
+    <div class="section-heading text-center">
+        <h2>Projects</h2>
+    </div><br/>
+    <div class="container">
+        <div class="photos-content">
+            <!-- Project Slider -->
+            <div class="photo-slider">
+                <!-- Project 1 -->
                 <div class="photo-item">
-                    <a href="https://github.com/prat555/NueroRisk" target="_blank">
-                        <img src="assets\images\about\3g.png" alt="Photo 2">
-                    </a>
-                </div>	
-						<!-- Navigation Arrows -->
-						<label class="prev">&#8249;</label>
-						<label class="next">&#8250;</label>
-					</div>
-				</div>
-			</div>
-		</section><br/><br/><br/>			
-		
-		<style>
-			.photo-slider {
-				position: relative;
-				max-width: 100%;
-				overflow: hidden;
-			}
-		
-			.photo-item {
-				display: none;
-				width: 100%;
-				text-align: center;
-			}
-		
-			.photo-item img {
-				width: 60%;
-				height: auto;
-			}
-		
-			.prev,
-			.next {
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
-				font-size: 24px;
-				cursor: pointer;
-				color: white;
-				background-color: grey;
-				padding: 10px;
-				border: none;
-				outline: none;
-			}
-			
-			.prev {
-				left: 120px; /* Adjusted the left position for the 'prev' arrow */
-			}
-	
-			.next {
-				right: 120px; /* Adjusted the right position for the 'next' arrow */
-			}
-		</style>
-		
-		<script>
-			let currentSlide = 1;
-		
-			function showSlide(n) {
-				const slides = document.querySelectorAll('.photo-item');
-				if (n > slides.length) {
-					currentSlide = 1;
-				}
-				if (n < 1) {
-					currentSlide = slides.length;
-				}
-		
-				slides.forEach(slide => (slide.style.display = 'none'));
-				slides[currentSlide - 1].style.display = 'block';
-			}
-		
-			function navigateSlide(n) {
-				showSlide((currentSlide += n));
-			}
-		
-			setInterval(() => navigateSlide(1), 4000);
-		
-			document.querySelector('.prev').addEventListener('click', () => navigateSlide(-1));
-			document.querySelector('.next').addEventListener('click', () => navigateSlide(1));
-		
-			function adjustArrowsForMobile() {
-				const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-				const prevArrow = document.querySelector('.prev');
-				const nextArrow = document.querySelector('.next');
-		
-				if (screenWidth <= 767) {
-					// Adjust arrow styles for smaller screens
-					prevArrow.style.left = '10px';
-					nextArrow.style.right = '10px';
-					prevArrow.style.fontSize = '18px';
-					nextArrow.style.fontSize = '18px';
-					prevArrow.style.padding = '8px';
-					nextArrow.style.padding = '8px';
-				} else {
-					// Reset arrow styles for larger screens
-					prevArrow.style.left = '120px';
-					nextArrow.style.right = '120px';
-					prevArrow.style.fontSize = '24px';
-					nextArrow.style.fontSize = '24px';
-					prevArrow.style.padding = '10px';
-					nextArrow.style.padding = '10px';
-				}
-			}
-		
-			// Call the function on page load and resize
-			window.addEventListener('load', adjustArrowsForMobile);
-			window.addEventListener('resize', adjustArrowsForMobile);
-		</script>
-		<!--photos end -->
+                    <div class="project-card">
+                        <a href="https://shizuka-san.vercel.app/" target="_blank" class="project-image-link">
+                            <img src="assets\images\about\1g.png" alt="Shizuka Project">
+                            <div class="link-icon">
+                                <i class="fa fa-external-link"></i>
+                            </div>
+                        </a>
+                        <div class="project-info">
+                            <h3>Shizuka - Sustainable E-commerce Platform</h3>
+                            <p>Developed a sustainable shopping platform with React & Node.js, featuring product catalog, cart/wishlist, and JWT-secured checkout—deployed on Vercel & Render. Built high-performance REST APIs, implemented efficient state management using Context API, and crafted a responsive mobile-first UI with Tailwind CSS.</p>
+                            <div class="project-skills">
+                                <span>MERN stack</span>
+                                <span>MongoDB</span>
+                                <span>Express</span>
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>JWT</span>
+                                <span>Axios</span>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="photo-item">
+                    <div class="project-card">
+                        <a href="https://ecovision-5ope.onrender.com/auth" target="_blank" class="project-image-link">
+                            <img src="assets\images\about\2g.png" alt="EcoVision Project">
+                            <div class="link-icon">
+                                <i class="fa fa-external-link"></i>
+                            </div>
+                        </a>
+                        <div class="project-info">
+                            <h3>EcoVision - AI-Powered Waste Classification</h3>
+                            <p>Developed a web app using React & Tailwind CSS that classifies waste (recyclable/compostable/hazardous) via image upload or camera scan, leveraging OpenAI's image recognition API for real-time analysis. Engineered a PostgreSQL-backed auth system and integrated an AI chatbot (OpenAI) to guide users on eco-friendly disposal, reducing landfill misuse.</p>
+                            <div class="project-skills">
+                                <span>React</span>
+                                <span>Vite</span>
+                                <span>TypeScript</span>
+                                <span>TailwindCSS</span>
+                                <span>Node.js</span>
+                                <span>PostgreSQL</span>
+                                <span>OpenAI API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="photo-item">
+                    <div class="project-card">
+                        <a href="https://github.com/prat555/NueroRisk" target="_blank" class="project-image-link">
+                            <img src="assets\images\about\3g.png" alt="NueroRisk Project">
+                            <div class="link-icon">
+                                <i class="fa fa-external-link"></i>
+                            </div>
+                        </a>
+                        <div class="project-info">
+                            <h3>NueroRisk - Drug Consumption Risk Prediction Platform</h3>
+                            <p>Built machine learning models to assess substance use risk based on psychological profiles, developed a persistent storage system using PostgreSQL for tracking risk assessments. Created interactive visualizations showing relationships between traits and substance risks.</p>
+                            <div class="project-skills">
+                                <span>Python</span>
+                                <span>Numpy</span>
+                                <span>Pandas</span>
+                                <span>Streamlit</span>
+                                <span>Scikit-learn</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <label class="prev">&#8249;</label>
+                <label class="next">&#8250;</label>
+            </div>
+        </div>
+    </div>
+</section><br/><br/><br/>			
+
+<style>
+    .photo-slider {
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .photo-item {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .project-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+        margin: 0 auto;
+        max-width: 800px;
+        position: relative;
+    }
+
+    .project-image-link {
+        position: relative;
+        display: block;
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #eee;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-image-link:hover img {
+        opacity: 0.9;
+    }
+
+    .link-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-image-link:hover .link-icon {
+        opacity: 1;
+    }
+
+    .link-icon i {
+        font-size: 14px;
+    }
+
+    .project-info {
+        padding: 20px;
+        text-align: left;
+    }
+
+    .project-info h3 {
+        margin-top: 0;
+        color: #333;
+    }
+
+    .project-info p {
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .project-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .project-skills span {
+        background: #f0f0f0;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        color: #555;
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+        background-color: grey;
+        padding: 10px;
+        border: none;
+        outline: none;
+        z-index: 10;
+    }
+    
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    @media (max-width: 767px) {
+        .project-card {
+            max-width: 90%;
+        }
+        
+        .prev,
+        .next {
+            padding: 8px;
+            font-size: 18px;
+        }
+    }
+</style>
+
+<script>
+    let currentSlide = 1;
+
+    function showSlide(n) {
+        const slides = document.querySelectorAll('.photo-item');
+        if (n > slides.length) {
+            currentSlide = 1;
+        }
+        if (n < 1) {
+            currentSlide = slides.length;
+        }
+
+        slides.forEach(slide => (slide.style.display = 'none'));
+        slides[currentSlide - 1].style.display = 'block';
+    }
+
+    function navigateSlide(n) {
+        showSlide((currentSlide += n));
+    }
+
+    setInterval(() => navigateSlide(1), 4000);
+
+    document.querySelector('.prev').addEventListener('click', () => navigateSlide(-1));
+    document.querySelector('.next').addEventListener('click', () => navigateSlide(1));
+
+    // Initialize first slide
+    showSlide(currentSlide);
+</script>
+<!--projects end -->
 		
 		<!--profiles start -->
 		<section id="profiles" class="profiles">
